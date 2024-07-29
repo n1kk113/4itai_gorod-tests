@@ -10,9 +10,9 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class TestBase {
         @BeforeAll
-        static void beforeAll() {
-            Configuration.browserSize = "1920x1080";
-            Configuration.baseUrl = "https://www.chitai-gorod.ru/";
+        static void setUp() {
+            Configuration.browser = "Chrome";
+            Configuration.browserSize = "1920х1080";
             Configuration.pageLoadStrategy = "eager";
         }
 
