@@ -28,4 +28,10 @@ public class TestsChitaiGorod extends TestBase {
   $(".header-cart__icon").click();
   sleep(10000);
  }
+ @Test
+ void myFirstCase () {
+   open("https://www.chitai-gorod.ru/");
+   $x("//*[@name='phrase']").setValue("Милослава Финдра").pressEnter();
+ }
 }
+
