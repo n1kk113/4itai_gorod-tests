@@ -15,5 +15,17 @@ public class TestsChitaiGorod extends TestBase {
      open("https://www.chitai-gorod.ru/");
      $x("//*[@name='phrase']").setValue("Test");
  }
+ @Test
+ void addToCard () {
+  open("https://www.chitai-gorod.ru/");
+  $(".header-search__input").setValue("Анна Каренина").pressEnter();
+  sleep(3000);
+  executeJavaScript("document.getElementsByClassName('cookie-notice')[0].style.display = 'none'");
+  executeJavaScript("document.getElementsByClassName('popmechanic-js-wrapper')[0].style.display = 'none'");
+  $$(".products-list").first()
+          .$(".product-buttons")
+          .$(".button").click();
 
+  sleep(10000);
+ }
 }
