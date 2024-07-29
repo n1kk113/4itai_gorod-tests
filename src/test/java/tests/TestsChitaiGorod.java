@@ -9,11 +9,10 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class TestsChitaiGorod extends TestBase {
  @Test
- @Owner("Denis Nikitin | tg: nikk113")
+ @Owner("Denis Nikitin | tg: @nikk113")
  @Severity(SeverityLevel.NORMAL)
     void openTest() {
      open("https://www.chitai-gorod.ru/");
      $x("//*[@name='phrase']").setValue("Test");
  }
-
 }
