@@ -27,7 +27,7 @@ public class TestsChitaiGorod extends TestBase {
   $$(".products-list").first()
           .$(".product-buttons")
           .$(".button").click();
-
+  $(".header-cart__icon").click();
   sleep(10000);
  }
  @Test
