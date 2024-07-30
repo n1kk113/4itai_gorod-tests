@@ -5,6 +5,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestsChitaiGorod extends TestBase {
@@ -19,15 +20,17 @@ public class TestsChitaiGorod extends TestBase {
  void addToCard () {
   open("https://www.chitai-gorod.ru/");
   $(".header-search__input").setValue("Анна Каренина").pressEnter();
-  sleep(3000);
+  $(".cookie-notice").shouldBe(visible);
   executeJavaScript("document.getElementsByClassName('cookie-notice')[0].style.display = 'none'");
+  $(".popmechanic-js-wrapper").shouldBe(visible);
   executeJavaScript("document.getElementsByClassName('popmechanic-js-wrapper')[0].style.display = 'none'");
   $$(".products-list").first()
           .$(".product-buttons")
           .$(".button").click();
-  $(".header-cart__icon").click();
-  sleep(10000);
+  $(".header-cart").click();
  }
+
+
  @Test
  void myFirstCase () {
    open("https://www.chitai-gorod.ru/");
